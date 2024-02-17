@@ -5,9 +5,9 @@ from time import sleep
 
 from sklearn.preprocessing import MinMaxScaler
 
-COLOR_BLUE  = "Decision Point"
-COLOR_RED   = "Decision Point"
-COLOR_GREEN = "Decision Point"
+COLOR_BLUE  = "Window End"
+COLOR_RED   = COLOR_BLUE
+COLOR_GREEN = COLOR_BLUE
 
 MSE_HELP = "Mean Squared Error (Scaled down)"
 DEC_HELP = "The decision made by our StockBot"
@@ -160,7 +160,7 @@ class BuyerSim(object):
             self.bank -= new_stocks * price
 
     def update_current_roi(self, price):
-        self.roi =  100 * ((self.bank + self.stocks*price-self.initial_bank) /  (self.initial_bank*2))
+        self.roi =  100 * ((self.bank + self.stocks*price-self.initial_bank) /  (self.initial_bank))
         self.roi = min(self.roi, np.random.random()*100 + 600)
 
 def sign(x):
