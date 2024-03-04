@@ -129,16 +129,16 @@ class StockBotSimulation(object):
         self.buyer_sim.update_current_roi(current)
 
         self.render_df = pd.DataFrame({
-                "x" : self.x_vals,
-                "y" : self.y_vals,
+                "Time" : self.x_vals,
+                "Closing Price (Normalised)" : self.y_vals,
 
                 "class": self.class_vals + [decision_color]*2
             })
 
     def update_overview_df(self, start=0, diff=30):
         self.overview_df = pd.DataFrame({
-                "x" : [start]*2 + [start+diff]*2 + self.overview_x_vals,
-                "y" : [0,1,0,1] + self.overview_y_vals,
+                "Time" : [start]*2 + [start+diff]*2 + self.overview_x_vals,
+                "Closing Price (Normalised)" : [0,1,0,1] + self.overview_y_vals,
 
                 "class" : ["Window Start"]*2 + ["Window End"]*2 + self.overview_class_vals
             })
