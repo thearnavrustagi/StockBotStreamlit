@@ -192,6 +192,7 @@ def animation_loop(sbs, delay=1):
 if __name__ == "__main__":
     sbs = StockBotSimulation()
     sbs.render()
+    "Dataset - NIFTY-50 HDFC Bank (equities)"
     st.write("## Made by:")
     aman, arman, arnav, parth = st.columns(4)
     aman.image("aman.jpeg", "Aman Paliwal")
