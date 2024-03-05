@@ -90,10 +90,10 @@ class StockBotSimulation(object):
 
     def render(self):
         self.render_closeup()
-        self.overview_chart.line_chart(self.overview_df,x="x",y="y",color="class")
+        self.overview_chart.line_chart(self.overview_df,x="Time",y="Closing Price (Normalised)",color="class")
 
     def render_closeup(self):
-        self.closeup_chart.line_chart(self.render_df,x="x",y="y",color="class")
+        self.closeup_chart.line_chart(self.render_df,x="Time",y="Closing Price (Normalised)",color="class")
 
     def update_and_render(self, start=0, diff=30):
         self.update_all_df(start=start, diff=diff)
